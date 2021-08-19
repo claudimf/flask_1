@@ -1,17 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
 
+@app.route("/")
+def raiz():
+    return "Homepage"
+
 
 @app.route('/inicio')
 def ola():
-    return '<h1>Olá Flask!</h1>'
-
-
-@app.route("/")
-def raiz():
-    return "Homepage "
+    return render_template('lista.html')
 
 
 if __name__ == "__main__":
