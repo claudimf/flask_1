@@ -1,18 +1,18 @@
 from flask import Flask
 
 
-server = Flask(__name__)
+app = Flask(__name__)
 
 
-@server.route("/")
-def hello():
-    return "Teste 1 "
+@app.route('/inicio')
+def ola():
+    return '<h1>Olá Flask!</h1>'
 
 
-@server.route("/test_1")
-def test_1():
-    return 'test_1'
+@app.route("/")
+def raiz():
+    return "Homepage "
 
 
 if __name__ == "__main__":
-    server.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
